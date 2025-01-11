@@ -1,7 +1,10 @@
 import express from "express";
 import bodyParser from "body-parser";
+import { configDotenv } from "dotenv";
 
 const PORT = 3000;
+
+configDotenv();
 
 const app = express();
 app.get("/", (req, res) => {
@@ -9,5 +12,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Running on ${PORT}`);
+  console.log(`Running on ${process.env.PORT}`);
 });
